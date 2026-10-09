@@ -1,0 +1,282 @@
+@import url("../assets/fonts/fonts.css");
+@import url("./style.css");
+@import url("./profile.css");
+@import url("./landing.css");
+@import url("./blog.css");
+@import url("./animations.css");
+@import url("./podcasts.css");
+@import url("./badges.css");
+@import url("./profile.css");
+@import url("./login.css");
+@import url("./consultants.css");
+@import url("./dashboard.css");
+
+:root {
+	--white: #fff;
+	--black: #111;
+	--mblue: #2563eb;
+	--mpurple: #9333ea;
+	--mgreen: #00b865;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Space Grotesk', sans-serif;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+
+body {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #111;
+	background: linear-gradient(45deg, #e0f2fe, #f3e8ff);
+	overflow: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+
+.fallback {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 500px;
+
+	& h3 {
+		color: var(--mpurple);
+		margin-top: 0.5rem;
+		text-align: center;
+	}
+}
+
+
+header {
+	background: linear-gradient(to right, #2563eb, #9333ea);
+	padding: 1.25rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+
+	& .header_logo {
+		width: 48px;
+		background: var(--white);
+		border-radius: 0.75rem;
+		padding: 0.5rem;
+	}
+
+	& a {
+		color: var(--white);
+		text-decoration: none;
+	}
+
+	& .sitename {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
+		justify-content: flex-start;
+
+		& h2,
+		& p {
+			margin: 0;
+			line-height: 1.1;
+		}
+
+		& p {
+			font-size: 0.8rem;
+		}
+	}
+
+	& .nav-btn {
+		background: transparent;
+		border: none;
+		color: var(--white);
+		position: relative;
+
+		& .profile-menu {
+			position: absolute;
+			background: var(--white);
+			color: var(--black);
+			right: -10px;
+			padding: 0.75rem;
+			font-size: 1rem;
+			border-radius: 1rem;
+			width: 200px;
+			box-shadow: 0 0 5px #ddd;
+			top: 30px;
+			visibility: hidden;
+			opacity: 0;
+			z-index: 999;
+
+			& div {
+				border-bottom: 1px solid #ddd;
+				padding-bottom: 0.5rem;
+			}
+
+			& a {
+				color: inherit;
+				display: block;
+				padding: 0.25rem;
+				border-radius: 1rem;
+				margin-top: 0.5rem;
+
+				&.active {
+					background: var(--mpurple);
+					color: var(--white);
+				}
+			}
+		}
+
+		&:hover .profile-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	& .main-nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 1rem;
+		flex-direction: row-reverse;
+	}
+
+
+	& nav {
+		position: absolute;
+		top: 75px;
+		right: 1.25rem;
+		background: var(--white);
+		width: 200px;
+		box-shadow: 0 0 5px #ccc;
+		border-radius: 1.5rem;
+		padding: 0.75rem;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 999;
+
+		&.show-menu {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		& a {
+			color: var(--black);
+			display: block;
+			border-radius: 1rem;
+			padding: 0.35rem 1rem;
+		}
+
+		& a.active {
+			color: var(--white);
+			background: var(--mpurple);
+		}
+	}
+
+}
+
+.ai_btn {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	background: var(--mpurple);
+	color: var(--white);
+	border: none;
+	border-radius: 2rem;
+	display: flex;
+	align-items: center;
+	padding: 0.75rem;
+	gap: 0.5rem;
+	font-size: inherit;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		background: var(--mblue);
+		border-radius: 1rem;
+		padding: 0.75rem 1rem;
+	}
+
+	& span {
+		display: none;
+	}
+
+	&:hover span {
+		display: block;
+	}
+}
+
+.main-content {
+	padding: 1.25rem;
+}
+
+.pageTitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+
+	& h1 {
+		font-size: 2rem;
+		color: var(--mpurple);
+	}
+}
+
+footer {
+	background: #111;
+	color: #fff;
+	padding: 1.5rem;
+	margin-top: 4rem;
+}
+
+@media screen and (min-width: 834px) {
+	header nav {
+		all: revert;
+		display: flex;
+		gap: 0.25rem;
+		align-items: center;
+
+		& a {
+			color: var(--white);
+			padding: 0.25rem 0.5rem;
+		}
+
+		& a.active {
+			color: var(--mpurple);
+			background: var(--white);
+		}
+	}
+
+	header .main-nav {
+		flex-direction: row;
+	}
+
+	header .navicon {
+		display: none;
+	}
+
+	footer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.main-content {
+		padding: 2rem;
+		min-height: 90vh;
+	}
+}

@@ -1,0 +1,46 @@
+.blogs_all {
+	display: grid;
+	gap: 1rem;
+
+	& .item {
+		padding: 1rem;
+		border-radius: 0.5rem;
+		background: var(--white);
+
+		& p {
+			color: #444;
+			margin: 0.5rem 0;
+			font-size: 0.85rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+
+			& svg {
+				width: 16px;
+			}
+		}
+
+		& .read-full {
+			background: var(--mpurple);
+			color: var(--white);
+			border: none;
+			padding: 0.25rem 0.5rem;
+			border-radius: 0.5rem;
+			font-size: inherit;
+			text-decoration: none;
+		}
+
+		&:hover {
+			box-shadow: 0 0 7px #ddd;
+			transform: scale(1.02);
+			transition: 0.3s ease-in-out;
+		}
+	}
+}
+
+@media screen and (min-width: 834px){
+	.blogs_all {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+

@@ -1,0 +1,119 @@
+.docs {
+
+	.doc_all {
+		display: grid;
+		gap: 1rem;
+
+		& .item {
+			padding: 1rem;
+			border-radius: 0.5rem;
+			background: var(--white);
+			display: flex;
+			gap: 0.5rem;
+
+			& .doc_icon {
+				width: 80px;
+				height: 80px;
+				color: #555;
+				display: flex;
+				justify-content: center;
+			}
+
+			& .doc_bio {
+				margin: 0 0 0.4rem 0;
+				color: #555;
+				font-size: 0.95rem;
+			}
+
+			& .doc_loc {
+				gap: 1rem;
+				display: flex;
+				color: #555;
+
+				& p {
+					display: flex;
+					gap: 0.5rem;
+
+					& svg {
+						width: 18px;
+					}
+				}
+			}
+
+			&:hover {
+				box-shadow: 0 0 7px #ddd;
+				transform: scale(1.02);
+				transition: 0.3s ease-in-out;
+			}
+		}
+	}
+}
+
+/**
+ * CONSULTANT MODAL
+ */
+.doc-full {
+	width: 100%;
+	max-width: 500px !important;
+
+	& .doc-full-inner {
+		width: 100%;
+		text-align: center;
+		
+		& .doc-full-content {
+			text-align: center;
+			margin-top: 1rem;
+			
+			& .doc_icon {
+				width: 125px;
+				height: 125px;
+				border-radius: 50%;
+				overflow: hidden;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border: 5px solid var(--mpurple);
+				color: var(--mpurple);
+			}
+
+			& .doc_info {
+				margin-bottom: 1rem;
+
+				& h3 {
+					color: var(--mpurple);
+				}
+
+				& .doc_bio {
+					margin: 0 0 0.5rem 0;
+					color: #555;
+					font-size: 0.95rem;
+				}
+
+				& .doc_loc {
+					gap: 1rem;
+					display: flex;
+					color: #555;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					& p {
+						display: flex;
+						gap: 0.5rem;
+						align-items: center;
+
+						& svg {
+							width: 18px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 834px) {
+	.doc_all {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
