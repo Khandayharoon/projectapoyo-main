@@ -1,5 +1,0 @@
-aiohttp==3.9.3
-python-dotenv==1.0.1
-rapidfuzz==3.9.0
-spacy==3.7.4
-streamlit==1.35.0
