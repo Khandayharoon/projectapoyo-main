@@ -1,10 +1,10 @@
 import nodemailer from 'nodemailer';
 
 const MAIL_PROVIDER = {
-	server: "",
-	username: "",
-	password: "",
-	sender: ""
+	server: "smtp.gmail.com",
+	username: process.env.MAIL_SENDER,
+	password: process.env.MAIL_PASSWORD,
+	sender: process.env.MAIL_SENDER
 }
 
 export const sendMail = async (recipient, subject, body) => {
